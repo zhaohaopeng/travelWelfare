@@ -1,12 +1,10 @@
 {
   "description": "项目配置文件",
   "packOptions": {
-    "ignore": [
-      {
-        "type": "file",
-        "value": ".eslintrc.js"
-      }
-    ]
+    "ignore": [{
+      "type": "file",
+      "value": ".eslintrc.js"
+    }]
   },
   "setting": {
     "bundle": false,
@@ -31,9 +29,12 @@
     "useApiHook": true,
     "useApiHostProcess": true,
     "showShadowRootInWxmlPanel": true,
-    "packNpmManually": false,
     "enableEngineNative": false,
-    "packNpmRelationList": [],
+    "packNpmManually": true,
+    "packNpmRelationList": [{
+      "packageJsonPath": "./package.json",
+      "miniprogramNpmDistDir": "./"
+    }],
     "minifyWXSS": true,
     "showES6CompileOption": false,
     "minifyWXML": true
