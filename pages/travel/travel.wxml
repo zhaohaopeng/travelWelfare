@@ -1,0 +1,19 @@
+<!--pages/travel/travel.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="order-list">
+      订单列表
+    </view>
+    <view class="activity-time">
+      活动时间：2022年12月 - 2023年3月
+    </view>
+    <image class="abc-logo" src="../../assets/logo.png"></image>
+  </view>
+  <view class="body">
+    <view class="card">
+      <view class="card-item card-item-1"></view>
+      <view class="card-item card-item-2"></view>
+      <view class="card-item card-item-3"></view>
+    </view>
+  </view>
+</view>

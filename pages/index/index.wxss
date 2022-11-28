@@ -17,3 +17,11 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.container {
+  text-align: center;
+}
+
+.test-pay {
+  margin-top: 200rpx;
+}
