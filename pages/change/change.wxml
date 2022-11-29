@@ -1,0 +1,25 @@
+<!--pages/change/change.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="activity-time">
+      活动时间：2022年12月 - 2023年3月
+    </view>
+    <image class="abc-logo" src="../../assets/logo.png"></image>
+  </view>
+  <view class="body">
+    <view class="card">
+      <view class="form">
+        <view class="label">兑换码</view>
+        <view class="input">
+          <van-field custom-style="border-color:#FA701B" placeholder="请输入您的兑换码" bind:change="onChange" border="{{ false }}" />
+        </view>
+      </view>
+      <van-divider dashed custom-style="margin:0 auto;margin-top:48rpx;width:90%" />
+      <van-button round type="info" block custom-class="confirm-button" color="#FA701B">确定</van-button>
+    </view>
+    <view class="describe">您可在【微信APP—我—卡包-券和礼品卡】中查看已成功领取的优惠券</view>
+    <view class="activity-button">
+      <van-button custom-class="button" plain round type="primary" color="#399841">用券指引</van-button>
+    </view>
+  </view>
+</view>

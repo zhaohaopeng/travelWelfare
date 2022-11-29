@@ -1,14 +1,16 @@
 {
   "pages": [
+    "pages/change/change",
     "pages/travel/travel",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "YOU惠出行",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#B6F3E0",
+    "backgroundColor": "#B6F3E0"
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
