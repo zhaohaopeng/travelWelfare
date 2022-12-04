@@ -1,0 +1,27 @@
+<van-overlay show="{{ show }}" z-index="2">
+  <view class="wrapper">
+    <view class="wrapper-block" catch:tap="noop">
+      <view class="title">
+        {{title}}
+        <view class="close" bindtap="onClickHide">
+          <image src="../../assets/icon-close.png"></image>
+        </view>
+      </view>
+      <view class="money"> <text class="symbol">¥</text>{{price}}</view>
+      <view class="body">
+        <van-cell-group inset>
+          <van-cell custom-class="custom-cell" value-class="{{ commodit.commodityType == 0 ? 'custom-value':'' }}" title="订单信息" value="{{name}}" bind:click="handleSelect">
+            <view slot="right-icon" class="right-icon" wx:if="{{commodit.commodityType == 0}}">
+              <image class="drop-down" src="../../assets/down.gif"></image>
+            </view>
+          </van-cell>
+          <van-cell custom-class="custom-cell" title="付款方式" value="{{payText}}" />
+        </van-cell-group>
+      </view>
+      <view class="button">
+        <van-button type="primary" round block color="rgba(19, 142, 118, 1)" bindtap="handleConfirm">{{buttontext}}</van-button>
+      </view>
+    </view>
+  </view>
+  <van-action-sheet close-on-click-overlay="{{true}}" show="{{ actionShow }}" actions="{{ options }}" cancel-text="取消" z-index="3" bind:select="handleActionClick" bind:cancel="handleActionCancel" />
+</van-overlay>

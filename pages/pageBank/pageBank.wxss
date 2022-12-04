@@ -1,0 +1,126 @@
+/* pages/pageBank/pageBank.wxss */
+.container {
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  background-color: #B6F3E0;
+}
+
+.mt-4 {
+  margin-top: 40rpx;
+}
+
+.mt-3 {
+  margin-top: 30rpx;
+}
+
+.header {
+  height: 1000rpx;
+  width: 100%;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 10;
+  background: url("https://m.szduopin.com/image/registered-bank.png") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.activity-time {
+  width: 460rpx;
+  height: 50rpx;
+  background: #2D8F30;
+  border-radius: 22px;
+  opacity: 0.7;
+  position: absolute;
+  left: 50%;
+  top: 290rpx;
+  margin-left: -230rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+
+.abc-logo {
+  width: 240rpx;
+  height: 46rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 40rpx;
+}
+
+.body {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding-top: 800rpx;
+  background-color: #B6F3E0;
+}
+
+.card {
+  width: 86%;
+  margin: 0 auto;
+  min-height: 400rpx;
+  background: linear-gradient(180deg, #FFFEEB 0%, rgba(255, 255, 255, 0.9) 100%);
+  border-radius: 20rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+  z-index: 1000;
+}
+
+.card .title {
+  width: 300rpx;
+  height: 76rpx;
+  background: linear-gradient(180deg, #FEDF79 0%, #F9C98A 100%);
+  border-radius: 8rpx 8rpx 48rpx 48rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -150rpx;
+  top: -10rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #FA701B;
+  line-height: 76rpx;
+  text-align: center;
+}
+
+.card .content {
+  box-sizing: border-box;
+  padding: 40rpx;
+  height: auto;
+  padding-top: 100rpx;
+}
+
+.card .content .t-1 {
+  color: rgba(0, 110, 113, 1);
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.card .content .t-2 {
+  color: rgba(0, 110, 113, 1);
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.card .content .t-3 {
+  margin-top: 10rpx;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 26rpx;
+}
+
+.save-image {
+  width: 86%;
+  margin: 0 auto;
+  margin-bottom: 100rpx;
+}
+
+.myCanvas {
+  position: absolute;
+  left: -2000rpx;
+}

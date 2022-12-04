@@ -1,0 +1,105 @@
+.wrapper {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 40%;
+  background-color: #fff;
+  border-radius: 30rpx;
+}
+
+.wrapper-block {
+  width: 100%;
+  min-height: 500rpx;
+  height: auto;
+  background: url("https://m.szduopin.com/image/model-bg.png") no-repeat top;
+  background-size: 100% 340rpx;
+  overflow: hidden;
+}
+
+.title {
+  width: 100%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: relative;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.close {
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+}
+
+.close image {
+  width: 100%;
+  height: 100%;
+}
+
+.money {
+  font-size: 80rpx;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.custom-cell {
+  background-color: transparent;
+}
+
+.money .symbol {
+  font-size: 60rpx;
+}
+
+.body {
+  margin-top: 20rpx;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.content .message {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.content .describe {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 28rpx;
+}
+
+.button {
+  width: 80%;
+  height: 60rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  margin-bottom: 100rpx;
+}
+
+.custom-value {
+  color: rgba(250, 112, 27, 1);
+}
+
+.right-icon {
+  display: flex;
+  align-items: center;
+}
+
+.drop-down {
+  width: 46rpx;
+  height: 46rpx;
+}

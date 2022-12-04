@@ -1,9 +1,12 @@
 {
   "pages": [
-    "pages/change/change",
     "pages/travel/travel",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/change/change",
+    "pages/ridecode/ridecode",
+    "pages/pageBank/pageBank",
+    "pages/pageWx/pageWx",
+    "pages/pageCcq/pageCcq",
+    "pages/orderList/orderList"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@vant/weapp": "^1.10.7",
+    "wxml2canvas": "^1.0.1",
     "wxmp-rsa": "^2.1.0"
   }
 }

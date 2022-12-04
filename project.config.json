@@ -46,7 +46,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
+  "libVersion": "2.27.3",
   "appid": "wxe6c4a28a8d5d2540",
   "projectname": "travelWelfare",
   "debugOptions": {

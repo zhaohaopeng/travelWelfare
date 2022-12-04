@@ -1,0 +1,49 @@
+<!--components/custom-guide/custom-guide.wxml-->
+<van-overlay show="{{ show }}" bind:click="onClickHide" z-index="2">
+  <view class="wrapper">
+    <view class="wrapper-block" catch:tap="noop">
+      <view class="title">
+        活动详情
+        <view class="close" bindtap="onClickHide">
+          <image src="../../assets/icon-close.png"></image>
+        </view>
+      </view>
+      <view class="content">
+        <scroll-view scroll-y="true" style="height: 800rpx;" bindscroll="scroll" scroll-into-view="{{toView}}">
+          <view class="text-1">一、活动时间</view>
+          <view class="text-2">2022年12月-2023年3月。</view>
+          <view class="text-1">二、活动对象</view>
+          <view class="text-2">深圳农行发行信用卡主卡持卡人（仅限深圳地区出行时可享受立减）。</view>
+          <view class="text-1">三、活动内容</view>
+          <view class="text-2">（一）新客礼。</view>
+          <view class="text-2">
+            针对活动期间新增信用卡主卡客户，使用农行信用卡微信支付0.01元即可购买价值120元新客大礼包，120张0.99元乘车券，每周一至周五每天派发2张乘车券（24小时内有效），支持手动暂停/恢复派发。
+          </view>
+          <view class="text-2">活动期间，每人可购买一次，数量有限，先到先得。</view>
+          <view class="text-1"> （二）老客礼。</view>
+          <view class="text-2">
+            针对深圳农行信用卡主卡存量客户，使用农行信用卡微信支付0.01元即可购买4张0.99元乘车券。每周一至周五每天派发2张乘车券（24小时内有效），支持手动暂停/恢复派发。活动期间，每人每月可购买1次，数量有限，先到先得。
+          </view>
+
+          <view class="text-2">用户使用微信乘车码地铁出行时，使用农行信用卡乘车满1元立减0.99元。</view>
+          <view class="text-1">五、活动规则</view>
+          <view class="text-2">
+            （一）用户可在【微信APP—我—服务—钱包—支付设置—免密支付-深圳市（公交）地铁微信免密支付—修改—优先扣费方式】设置为农行信用卡。
+          </view>
+          <view class="text-2">
+            （二）用户可在【微信APP—我—卡包-券和礼品卡】中查看已成功领取的优惠券，如若已使用或已过期，可在【微信APP—我—卡包—券和礼品卡-右上角三个小点—历史记录】中查看。
+          </view>
+          <view class="text-2">
+            （三）本活动仅限中国大陆身份证居民参与，满足以下任一条件，同一微信号、同一身份证号、同一手机号、同一银行卡号、同一手机设备、同一订单，均视为同一用户。
+          </view>
+          <view class="text-2">
+            用户在活动期间有逾期还款、卡片冻结，或有其他违反相关业务约定条款情形，或出现作弊行为（如使用外挂、插件、批量注册、虚假交易、恶意套利等），农行有权随时取消其参加活动的资格。
+          </view>
+        </scroll-view>
+      </view>
+      <view class="button">
+        <van-button type="primary" round block color="rgba(19, 142, 118, 1)" bindtap="onClickHide">确定</van-button>
+      </view>
+    </view>
+  </view>
+</van-overlay>

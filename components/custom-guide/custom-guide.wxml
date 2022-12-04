@@ -1,0 +1,15 @@
+<!--components/custom-guide/custom-guide.wxml-->
+<van-overlay show="{{ show }}" bind:click="onClickHide" z-index="2">
+  <view class="wrapper">
+    <view class="wrapper-block" catch:tap="noop">
+      <view class="title">
+        <view class="close" bindtap="onClickHide">
+          <image src="../../assets/icon-close.png"></image>
+        </view>
+      </view>
+      <view class="button">
+        <van-button type="primary" round block color="rgba(19, 142, 118, 1)" bindtap="onClickHide">确定</van-button>
+      </view>
+    </view>
+  </view>
+</van-overlay>

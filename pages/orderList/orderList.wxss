@@ -1,0 +1,88 @@
+/* pages/orderList/orderList.wxss */
+.container {
+  width: 100%;
+  height: auto;
+  background-color: #FAFAFA;
+  min-height: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 330rpx;
+  background-color: #FAFAFA;
+}
+
+.header .crad {
+  width: 100%;
+  height: 100%;
+  background: url("https://m.szduopin.com/image/order-card.png") no-repeat center;
+  background-size: 100% 100%;
+  padding: 60rpx;
+  box-sizing: border-box;
+  color: #138E76;
+  position: relative;
+}
+
+.header .crad .hr {
+  width: 1rpx;
+  height: 80rpx;
+  background-color: rgba(19, 142, 118, 1);
+  position: absolute;
+  left: 266rpx;
+  top: 100rpx;
+  opacity: 0.3;
+}
+
+.header .crad .card-center,
+.header .crad .card-left {
+  height: 160rpx;
+  text-align: left;
+  padding-left: 40rpx;
+}
+
+.header .crad .card-center {
+  padding-left: 50rpx;
+}
+
+.header .crad .card-center .title,
+.header .crad .card-left .title {
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  display: inline-block;
+}
+
+.header .crad .card-center .content,
+.header .crad .card-left .content {
+  font-size: 50rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+
+.header .crad .card-bottom {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 24rpx;
+  text-align: left;
+  padding-left: 40rpx;
+}
+
+.header .crad .card-right {
+  height: 100%;
+  text-align: center;
+}
+
+.header .crad .card-right .button {
+  height: 60rpx;
+  margin: 0 auto;
+  margin-top: 70rpx;
+}
+
+.header .crad .card-right .text {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.body {
+  height: auto;
+}

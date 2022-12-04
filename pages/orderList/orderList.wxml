@@ -1,0 +1,45 @@
+<!--pages/orderList/orderList.wxml-->
+<view class="container">
+  <van-sticky>
+    <view class="header">
+      <view class="crad">
+        <van-row style="height: 100%;">
+          <van-col span="16">
+            <van-row>
+              <van-col span="12">
+                <view class="card-left">
+                  <text class="title">总计</text>
+                  <view class="content">{{info.total}}<text style="font-size: 30rpx;">张</text></view>
+                </view>
+              </van-col>
+              <van-col span="12">
+                <view class="card-center">
+                  <text class="title">已发</text>
+                  <view class="content">{{info.issued}}<text style="font-size: 30rpx;">张</text></view>
+                </view>
+              </van-col>
+            </van-row>
+            <view class="card-bottom">
+              *乘车券默认每日零点派发2张
+            </view>
+          </van-col>
+          <van-col span="8">
+            <view class="card-right">
+              <van-button round color="{{info.enable == 1 ? '#FA701B' : '#138E76'}}" custom-class="button" bindtap="hadnleStop">
+                {{ info.enable == 1 ? "继续派发" : "暂停派发" }}
+              </van-button>
+              <view class="text">（次日生效）</view>
+            </view>
+          </van-col>
+        </van-row>
+        <view class="hr"></view>
+      </view>
+    </view>
+  </van-sticky>
+  <view class="body">
+    <van-cell-group inset style="margin-bottom: 30rpx;">
+      <van-cell wx:for="{{orderList}}" wx:for-item="item" wx:key="item.id" title="{{item.commodityName}}" value="{{item.payAmount}}" label="{{item.payDate}}" />
+    </van-cell-group>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

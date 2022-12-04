@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  },
+  "navigationBarTitleText": "订单列表",
+  "navigationBarBackgroundColor": "#FAFAFA",
+  "backgroundColor": "#FAFAFA"
+}
