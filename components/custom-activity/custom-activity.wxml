@@ -10,7 +10,7 @@
       </view>
       <view class="content">
         <scroll-view scroll-y="true" style="height: 800rpx;" bindscroll="scroll" scroll-into-view="{{toView}}">
-          <view wx:if="{{activityType == 1}}">
+          <view wx:if="{{activityType == 2}}">
             <view class="text-1">一、活动名称</view>
             <view class="text-2">农行You惠出行 好礼享不停</view>
             <view class="text-1">二、活动时间</view>
@@ -42,7 +42,7 @@
               用户在活动期间有逾期还款、卡片冻结，或有其他违反相关业务约定条款情形，或出现作弊行为（如使用外挂、插件、批量注册、虚假交易、恶意套利等），农行有权随时取消其参加活动的资格。
             </view>
           </view>
-          <view wx:if="{{activityType == 2}}">
+          <view wx:if="{{activityType == 1}}">
             <view class="text-1">一、活动名称</view>
             <view class="text-2">You惠出行 就选农行信用卡</view>
             <view class="text-1">二、活动时间</view>

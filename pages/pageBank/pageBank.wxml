@@ -2,8 +2,8 @@
 <canvas canvas-id="myCanvas" class="myCanvas"></canvas>
 <view class="container my_canvas">
   <view id="my-canvas" class="header my_draw_canvas" data-type="background-image">
-    <view class="activity-time my_draw_canvas" data-type="text" data-text="活动时间：2022年12月 - 2023年3月">
-      {{activityTime}}
+    <view class="activity-time my_draw_canvas">
+      <text class="my_draw_canvas" data-type="text" data-text="{{activityTime}}">{{activityTime}}</text>
     </view>
     <image class="abc-logo my_draw_canvas" src="../../assets/logo.png" data-type="image" data-url="../../assets/logo.png"></image>
   </view>
@@ -38,7 +38,7 @@
       </view>
     </view>
     <view class="save-image">
-      <van-button type="primary" block round color="rgba(19, 142, 118, 1)" bind:click="handleSaveImage">点击保存图片参与</van-button>
+      <van-button type="primary" block round color="rgba(19, 142, 118, 1)" bind:click="savePoster">点击保存图片参与</van-button>
     </view>
   </view>
 </view>

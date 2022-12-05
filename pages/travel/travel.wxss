@@ -2,6 +2,7 @@
 .container {
   position: relative;
   min-height: 100%;
+  overflow: hidden;
 }
 
 .header {
@@ -83,24 +84,24 @@
 .card-item-1 {
   background: url("https://m.szduopin.com/image/card-3.png") no-repeat center;
   background-size: 100% 100%;
-  height: 280rpx;
+  height: 260rpx;
 }
 
 .card-item-2 {
   background: url("https://m.szduopin.com/image/card-2.png") no-repeat center;
   background-size: 100% 100%;
-  height: 240rpx;
+  height: 200rpx;
 }
 
 .card-item-3 {
   background: url("https://m.szduopin.com/image/card-1.png") no-repeat center;
   background-size: 100% 100%;
-  height: 240rpx;
+  height: 200rpx;
 }
 
 .card-item-1 .card-text-left {
   width: 340rpx;
-  min-height: 220rpx;
+  min-height: 200rpx;
   position: absolute;
   left: 120rpx;
   top: 30rpx;
@@ -114,7 +115,7 @@
 .card-item-2 .card-text-left,
 .card-item-3 .card-text-left {
   width: 340rpx;
-  min-height: 160rpx;
+  min-height: 140rpx;
   position: absolute;
   left: 120rpx;
   top: 30rpx;
@@ -141,7 +142,7 @@
 
 .card-item-1 .card-text-right {
   width: 210rpx;
-  min-height: 220rpx;
+  min-height: 200rpx;
   position: absolute;
   right: 30rpx;
   top: 30rpx;
@@ -154,7 +155,7 @@
 .card-item-2 .card-text-right,
 .card-item-3 .card-text-right {
   width: 210rpx;
-  min-height: 180rpx;
+  min-height: 140rpx;
   position: absolute;
   right: 30rpx;
   top: 30rpx;

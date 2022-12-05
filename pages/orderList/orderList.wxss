@@ -4,7 +4,6 @@
   height: auto;
   background-color: #FAFAFA;
   min-height: 100%;
-  overflow: hidden;
 }
 
 .header {
@@ -60,11 +59,13 @@
 }
 
 .header .crad .card-bottom {
-  text-align: center;
+  text-align: left;
   color: rgba(0, 0, 0, 0.45);
   font-size: 24rpx;
-  text-align: left;
-  padding-left: 40rpx;
+}
+
+.header .crad .card-bottom text{
+  display: inline-block;
 }
 
 .header .crad .card-right {
@@ -86,6 +87,5 @@
 
 .body {
   height: auto;
-  margin-top: 30rpx;
   margin-bottom: 60rpx;
 }

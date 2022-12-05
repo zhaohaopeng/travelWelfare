@@ -11,16 +11,17 @@
       <view class="form">
         <view class="label">兑换码</view>
         <view class="input">
-          <van-field custom-style="border-color:#FA701B" placeholder="请输入您的兑换码" bind:change="onChange" border="{{ false }}" />
+          <van-field custom-style="border-color:#FA701B" model:value="{{ cdkCode }}" placeholder="请输入您的兑换码" bind:change="onChange" clearable border="{{ false }}" />
         </view>
       </view>
       <van-divider dashed custom-style="margin:0 auto;margin-top:48rpx;width:90%" />
-      <van-button round type="info" block custom-class="confirm-button" color="#FA701B">确定</van-button>
+      <van-button round type="info" block custom-class="confirm-button" color="#FA701B" bind:click="handleChange" loading="{{loading}}">确定</van-button>
     </view>
     <view class="describe">您可在【微信APP—我—卡包-券和礼品卡】中查看已成功领取的优惠券</view>
     <view class="activity-button">
-      <van-button custom-class="button" plain round type="primary" color="#399841" bind:click="onClickShow" >用券指引</van-button>
+      <van-button custom-class="button" plain round type="primary" color="#399841" bind:click="onClickShow">用券指引</van-button>
     </view>
   </view>
-  <custom-guide show="{{guideShow}}" activityType="{{1}}"></custom-guide>
+  <custom-guide show="{{guideShow}}" activityType="{{2}}"></custom-guide>
+  <custom-system-tips show="{{systemTipsShow}}" message="{{message}}" describe="{{describe}}" iconType="{{iconType}}"></custom-system-tips>
 </view>

@@ -1,7 +1,7 @@
 <!--pages/orderList/orderList.wxml-->
 <view class="container">
   <van-sticky>
-    <view class="header" wx:if="{{activityId == 2}}">
+    <view class="header">
       <view class="crad">
         <van-row style="height: 100%;">
           <van-col span="16">
@@ -20,15 +20,21 @@
               </van-col>
             </van-row>
             <view class="card-bottom">
-              *乘车券默认每日零点派发2张
+              <text wx:if="{{activityId == 2}}" style="margin-left: 28rpx;">*乘车券默认每日零点派发2张</text>
+              <text wx:else style="margin-left: 20rpx;">【微信APP—我—卡包-券和礼品卡】</text>
             </view>
           </van-col>
           <van-col span="8">
             <view class="card-right">
-              <van-button round color="{{info.enable == 1 ? '#FA701B' : '#138E76'}}" custom-class="button" bindtap="hadnleStop">
+              <van-button wx:if="{{activityId == 2}}" round color="{{info.enable == 1 ? '#FA701B' : '#138E76'}}" custom-class="button" bindtap="hadnleStop">
                 {{ info.enable == 1 ? "继续派发" : "暂停派发" }}
               </van-button>
-              <view class="text">（次日生效）</view>
+
+              <van-button wx:if="{{activityId == 1}}" round color="#138E76" custom-class="button" bindtap="hadnleStop" bindtap="hadnleUpdateData">
+                刷新数据
+              </van-button>
+
+              <view class="text" wx:if="{{activityId == 2}}">（次日生效）</view>
             </view>
           </van-col>
         </van-row>
@@ -40,7 +46,7 @@
     <van-cell-group inset>
       <van-cell wx:for="{{orderList}}" wx:for-item="item" wx:key="id" title="{{item.commodityName}}" value="{{item.payAmount}}" label="{{item.payDate}}" />
     </van-cell-group>
-    <van-empty wx:if="{{orderList.length == 0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="暂数据" />
+    <van-empty wx:if="{{orderList.length == 0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="暂无数据" />
   </view>
   <van-dialog id="van-dialog" />
 </view>

@@ -28,19 +28,32 @@ Page({
       userId,
       activityId
     })
-    if (activityId == 2) {
-      this.queryVoucherStatistics();
-    }
+    this.queryVoucherStatistics();
     this.queryUserHistoryOrder();
+  },
+  hadnleUpdateData() {
+    wx.showLoading({
+      title: '加载中',
+    })
+    this.queryVoucherStatistics(() => {
+      wx.showToast({
+        title: "已刷新",
+        icon: 'success',
+        duration: 2000
+      })
+    });
   },
   /**
    * 查询订单状态
    */
-  queryVoucherStatistics() {
+  queryVoucherStatistics(cb) {
     $api.queryVoucherStatistics(this.data.userId).then(res => {
       this.setData({
         info: res
       })
+      if (cb && typeof cb == "function") {
+        cb();
+      }
     })
   },
   /**

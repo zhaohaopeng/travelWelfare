@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "custom-system-tips": "/components/custom-system-tips/custom-system-tips",
     "van-field": "@vant/weapp/field/index",
     "van-divider": "@vant/weapp/divider/index",
     "custom-guide": "/components/custom-guide/custom-guide"

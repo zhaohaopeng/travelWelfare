@@ -12,7 +12,8 @@ const API = {
   queryVoucherStatistics: (data) => request('GET', `/coupon/queryVoucherStatistics?userId=${data}`),
   updateVoucherStatus: (data) => request('POST', `/coupon/updateVoucherStatus`, data),
   queryUserHistoryOrder: (data) => request('GET', `/order/queryUserHistoryOrder?userId=${data}`),
-  
+  changeCdk: (data) => request('POST', `/cdk/activation`, data),
+
 };
 
 module.exports = {

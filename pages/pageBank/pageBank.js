@@ -1,5 +1,4 @@
 // pages/pageBank/pageBank.js
-import Wxml2Canvas from 'wxml2canvas';
 const {
   activityTime
 } = getApp().globalData;
@@ -20,73 +19,10 @@ Page({
   onLoad: function (options) {
 
   },
-
-  /**
-   * @name 保存图片
-   */
-  handleSaveImage() {
-    wx.showLoading()
-    const that = this
-    const query = wx.createSelectorQuery().in(this);
-    query.select('#my-canvas').fields({ // 选择需要生成canvas的范围
-      size: true,
-      scrollOffset: true
-    }, data => {
-      console.log(data, ":data");
-      let width = data.width;
-      let height = data.height;
-      that.setData({
-        width,
-        height
-      })
-      setTimeout(() => {
-        that.startDraw()
-      }, 1500);
-    }).exec()
-
-  },
-
-  startDraw() {
-    let that = this
-
-    // 创建wxml2canvas对象
-    let drawMyImage = new Wxml2Canvas({
-      element: 'myCanvas', // canvas的id,
-      obj: that, // 传入当前组件的this
-      width: that.data.width * 2,
-      height: that.data.height * 2,
-      background: '#B6F3E0', // 生成图片的背景色
-      progress(percent) { // 进度
-        // console.log(percent);
-      },
-      finish(url) { // 生成的图片
-        wx.hideLoading()
-        console.log(url, ":url");
-        that.savePoster(url)
-      },
-      error(res) { // 失败原因
-        console.log(res);
-        wx.hideLoading()
-      }
-    }, this);
-    let data = {
-      // 获取wxml数据
-      list: [{
-        type: 'wxml',
-        class: '.my_canvas .my_draw_canvas',
-        limit: '.my_canvas',
-        x: 0,
-        y: 0
-      }]
-    }
-    // 绘制canvas
-    drawMyImage.draw(data, this)
-
-  },
-  savePoster(url) {
+  savePoster() {
     const that = this
     wx.saveImageToPhotosAlbum({
-      filePath: url,
+      filePath: "https://m.szduopin.com/image/registered-bank.png",
       success: function () {
         wx.showToast({
           title: '保存成功',
