@@ -1,7 +1,7 @@
 <!--components/custom-guide/custom-guide.wxml-->
 <van-overlay show="{{ show }}" bind:click="onClickHide" z-index="2">
   <view class="wrapper">
-    <view class="wrapper-block" catch:tap="noop">
+    <view class="wrapper-block" style="{{style}}" catch:tap="noop">
       <view class="title">
         <view class="close" bindtap="onClickHide">
           <image src="../../assets/icon-close.png"></image>

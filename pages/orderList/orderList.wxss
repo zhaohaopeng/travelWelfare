@@ -4,6 +4,7 @@
   height: auto;
   background-color: #FAFAFA;
   min-height: 100%;
+  overflow: hidden;
 }
 
 .header {
@@ -85,4 +86,6 @@
 
 .body {
   height: auto;
+  margin-top: 30rpx;
+  margin-bottom: 60rpx;
 }

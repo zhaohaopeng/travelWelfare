@@ -2,7 +2,7 @@
 <view class="container">
   <view class="header">
     <view class="activity-time">
-      活动时间：2022年12月 - 2023年3月
+      {{activityTime}}
     </view>
     <image class="abc-logo" src="../../assets/logo.png"></image>
   </view>

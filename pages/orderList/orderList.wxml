@@ -1,7 +1,7 @@
 <!--pages/orderList/orderList.wxml-->
 <view class="container">
   <van-sticky>
-    <view class="header">
+    <view class="header" wx:if="{{activityId == 2}}">
       <view class="crad">
         <van-row style="height: 100%;">
           <van-col span="16">
@@ -37,9 +37,10 @@
     </view>
   </van-sticky>
   <view class="body">
-    <van-cell-group inset style="margin-bottom: 30rpx;">
-      <van-cell wx:for="{{orderList}}" wx:for-item="item" wx:key="item.id" title="{{item.commodityName}}" value="{{item.payAmount}}" label="{{item.payDate}}" />
+    <van-cell-group inset>
+      <van-cell wx:for="{{orderList}}" wx:for-item="item" wx:key="id" title="{{item.commodityName}}" value="{{item.payAmount}}" label="{{item.payDate}}" />
     </van-cell-group>
+    <van-empty wx:if="{{orderList.length == 0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="暂数据" />
   </view>
   <van-dialog id="van-dialog" />
 </view>

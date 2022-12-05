@@ -1,11 +1,14 @@
 // pages/pageWx/pageWx.js
+const {
+  activityTime
+} = getApp().globalData;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    activityTime,
   },
 
   /**

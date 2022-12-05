@@ -5,7 +5,7 @@
       订单列表
     </view>
     <view class="activity-time">
-      活动时间：2022年12月 - 2023年3月
+      {{activityTime}}
     </view>
     <image class="abc-logo" src="../../assets/logo.png"></image>
   </view>
@@ -20,7 +20,9 @@
           <view class="card-text-content">每天派发两张</view>
         </view>
         <view class="card-text-right">
-          <van-button custom-class="button" round type="info" color="#FA701B">1分钱领取</van-button>
+          <van-button custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityA.commodityType}}" bind:click="handleCreateOrder">
+            {{commodityA.price * 100}}分钱领取
+          </van-button>
           <view class="text">每人可购买一次</view>
         </view>
       </view>
@@ -32,7 +34,9 @@
           <view class="card-text-content">每天派发两张</view>
         </view>
         <view class="card-text-right">
-          <van-button custom-class="button" round type="info" color="#FA701B">1分钱领取</van-button>
+          <van-button custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityB.commodityType}}" bind:click="handleCreateOrder">
+            {{commodityB.price * 100}}分钱领取
+          </van-button>
           <view class="text">每人每月可购买一次</view>
         </view>
       </view>
@@ -59,8 +63,15 @@
     </view>
     <view class="describe">您可在【微信APP—我—卡包-券和礼品卡】中查看已成功领取的优惠券</view>
     <view class="activity-button">
-      <van-button custom-class="button" plain round type="primary" color="#399841" style="margin-right:20rpx;">活动详情</van-button>
-      <van-button custom-class="button" plain round type="primary" color="#399841">用券指引</van-button>
+      <van-button custom-class="button" plain round type="primary" color="#399841" style="margin-right:20rpx;" bind:click="onClickShow" data-type="activityShow">活动详情</van-button>
+      <van-button custom-class="button" plain round type="primary" color="#399841" bind:click="onClickShow" data-type="guideShow">用券指引</van-button>
     </view>
   </view>
+
+  <custom-guide show="{{guideShow}}" activityType="{{activityId}}"></custom-guide>
+  <custom-system-tips show="{{systemTipsShow}}" message="{{message}}" describe="{{describe}}" iconType="{{iconType}}"></custom-system-tips>
+  <custom-activity show="{{activityShow}}" activityType="{{activityId}}"></custom-activity>
+  <custom-confirm show="{{confirmShow}}" commodit="{{commodityInfo}}" bindmyevent="onMyEvent"></custom-confirm>
+  <van-dialog title="系统提示" show="{{ show }}" show-cancel-button confirm-button-open-type="getPhoneNumber" bind:close="onClose" bind:getphonenumber="getPhoneNumber" message="授权手机号" confirm-button-text="授权" confirm-button-color="#006E71">
+  </van-dialog>
 </view>

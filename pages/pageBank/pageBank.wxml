@@ -3,7 +3,7 @@
 <view class="container my_canvas">
   <view id="my-canvas" class="header my_draw_canvas" data-type="background-image">
     <view class="activity-time my_draw_canvas" data-type="text" data-text="活动时间：2022年12月 - 2023年3月">
-      活动时间：2022年12月 - 2023年3月
+      {{activityTime}}
     </view>
     <image class="abc-logo my_draw_canvas" src="../../assets/logo.png" data-type="image" data-url="../../assets/logo.png"></image>
   </view>

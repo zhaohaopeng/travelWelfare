@@ -15,10 +15,12 @@ Component({
     commodit: {
       type: Object,
       value: () => {
-        return {}
+        return {
+          giftBagList: []
+        }
       },
       observer: function (newData) {
-        if (newData.commodityType == 0 && newData.giftBagList.length) {
+        if (newData.commodityType == 0 && newData.giftBagList && newData.giftBagList.length) {
           this.setData({
             name: newData.giftBagList[0].name,
             actionShow: false,
@@ -70,7 +72,7 @@ Component({
       })
     },
     handleSelect() {
-      if (this.data.commodit.commodityType == 0) {
+      if (this.data.commodit.giftBagList && this.data.commodit.giftBagList) {
         const options = this.data.commodit.giftBagList;
         this.setData({
           options,
@@ -84,9 +86,6 @@ Component({
       } = this.data;
       this.triggerEvent("myevent", {
         id
-      })
-      this.setData({
-        show: false
       })
     }
   }

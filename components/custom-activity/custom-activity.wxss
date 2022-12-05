@@ -51,9 +51,11 @@
 
 .content .text-1 {
   font-size: 28rpx;
+  text-indent: 56rpx;
 }
 
 .content .text-2 {
+  text-indent: 56rpx;
   font-size: 28rpx;
   line-height: 50rpx;
 }

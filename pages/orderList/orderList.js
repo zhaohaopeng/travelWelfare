@@ -20,13 +20,17 @@ Page({
    */
   onLoad: function (options) {
     const {
-      userId
+      userId,
+      activityId
     } = options;
-    console.log(userId, ":userId");
+    console.log(activityId, ":activityId");
     this.setData({
-      userId
+      userId,
+      activityId
     })
-    this.queryVoucherStatistics();
+    if (activityId == 2) {
+      this.queryVoucherStatistics();
+    }
     this.queryUserHistoryOrder();
   },
   /**

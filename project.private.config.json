@@ -19,9 +19,27 @@
           "scene": null
         },
         {
-          "name": "",
+          "name": "订单列表",
           "pathName": "pages/orderList/orderList",
-          "query": "userId=f74ab985ea561b8224b79bb5e724e6e2",
+          "query": "userId=f74ab985ea561b8224b79bb5e724e6e2&activityId=\"1\"",
+          "scene": null
+        },
+        {
+          "name": "乘车券",
+          "pathName": "pages/ridecode/ridecode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "出行券",
+          "pathName": "pages/travel/travel",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "CKD兑换页",
+          "pathName": "pages/change/change",
+          "query": "",
           "scene": null
         }
       ]

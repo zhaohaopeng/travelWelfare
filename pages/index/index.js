@@ -1,8 +1,7 @@
 // index.js
 // 获取应用实例
-const app = getApp()
 const $api = require('../../utils/api').API;
-
+const app = getApp()
 const {
   appId
 } = app.globalData;

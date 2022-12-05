@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/travel/travel",
     "pages/change/change",
     "pages/ridecode/ridecode",
+    "pages/travel/travel",
     "pages/pageBank/pageBank",
     "pages/pageWx/pageWx",
     "pages/pageCcq/pageCcq",

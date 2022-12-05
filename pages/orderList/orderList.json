@@ -5,9 +5,10 @@
     "van-col": "@vant/weapp/col/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-empty": "@vant/weapp/empty/index"
   },
   "navigationBarTitleText": "订单列表",
-  "navigationBarBackgroundColor": "#FAFAFA",
+  "navigationBarBackgroundColor": "#FFFFFF",
   "backgroundColor": "#FAFAFA"
 }

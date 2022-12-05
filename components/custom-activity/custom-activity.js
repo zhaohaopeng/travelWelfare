@@ -4,10 +4,14 @@ Component({
     show: {
       type: Boolean,
       value: false,
-      observer: function (newVal, oldVal) {
-        console.log(newVal, "::::::::newVal");
-      }
     },
+    activityType: {
+      type: Number,
+      value: 1,
+    }
+  },
+  ready() {
+    console.log(this.data.activityType, ":this.data.activityType");
   },
   data: {
 

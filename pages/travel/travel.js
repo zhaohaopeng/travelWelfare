@@ -1,10 +1,14 @@
 // pages/travel/travel.js
+const {
+  activityTime
+} = getApp().globalData;
 const $api = require('../../utils/api').API;
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    activityTime,
     userInfo: {},
     activityId: 1,
     activityInfo: {},
@@ -138,7 +142,7 @@ Page({
   handleToOrderList() {
     const that = this;
     wx.navigateTo({
-      url: `/pages/orderList/orderList?userId=${that.data.userInfo.id}`,
+      url: `/pages/orderList/orderList?userId=${that.data.userInfo.id}&activityId=${that.data.activityId}`,
     })
   },
   /**
@@ -270,6 +274,7 @@ Page({
               // 支付成功
               if (payState == 1) {
                 that.setData({
+                  confirmShow: false,
                   systemTipsShow: true,
                   message: "支付成功",
                   describe: "参与活动成功 您可在订单列表查看发券明细",
@@ -279,6 +284,7 @@ Page({
               // 支付失败
               if (payState == 2 || payState == 3) {
                 that.setData({
+                  confirmShow: false,
                   systemTipsShow: true,
                   message: "支付失败",
                   describe: "非农行信用卡支付，金额退回",

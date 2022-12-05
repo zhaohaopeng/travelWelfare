@@ -1,11 +1,15 @@
 // pages/pageBank/pageBank.js
 import Wxml2Canvas from 'wxml2canvas';
+const {
+  activityTime
+} = getApp().globalData;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    activityTime,
     width: null,
     height: null
   },

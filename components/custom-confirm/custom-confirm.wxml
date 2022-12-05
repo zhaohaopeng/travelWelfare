@@ -10,8 +10,8 @@
       <view class="money"> <text class="symbol">¥</text>{{price}}</view>
       <view class="body">
         <van-cell-group inset>
-          <van-cell custom-class="custom-cell" value-class="{{ commodit.commodityType == 0 ? 'custom-value':'' }}" title="订单信息" value="{{name}}" bind:click="handleSelect">
-            <view slot="right-icon" class="right-icon" wx:if="{{commodit.commodityType == 0}}">
+          <van-cell custom-class="custom-cell" value-class="{{ commodit.giftBagList && commodit.giftBagList.length ? 'custom-value':'' }}" title="订单信息" value="{{name}}" bind:click="handleSelect">
+            <view slot="right-icon" class="right-icon" wx:if="{{commodit.giftBagList && commodit.giftBagList.length}}">
               <image class="drop-down" src="../../assets/down.gif"></image>
             </view>
           </van-cell>
