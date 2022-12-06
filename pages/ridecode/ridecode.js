@@ -30,7 +30,8 @@ Page({
     message: null,
     describe: null,
     iconType: null,
-    commodityInfo: {}
+    commodityInfo: {},
+    isNewCustomer: false
   },
 
   /**
@@ -73,6 +74,7 @@ Page({
         this.setData({
           userInfo: res
         })
+        this.queryUserHistoryOrder();
       } else {
         $api.createAccount({
           weChatOpenId: this.data.openid
@@ -84,11 +86,27 @@ Page({
               phone: null
             }
           })
+          this.queryUserHistoryOrder();
         })
       }
     })
   },
-
+  /**
+   * 查询订单列表
+   */
+  queryUserHistoryOrder() {
+    const {
+      userInfo,
+      activityId
+    } = this.data;
+    $api.queryUserHistoryOrder(userInfo.id, activityId).then(res => {
+      const orderList = res || [];
+      let isNewCustomer = orderList.length ? false : true;
+      this.setData({
+        isNewCustomer
+      })
+    })
+  },
   /**
    * 查询商品列表
    */
@@ -157,12 +175,18 @@ Page({
   /**
    * 手机号授权
    */
-  getPhoneNumber(res) {
+  getPhoneNumber(phoneData) {
     const that = this;
+    const {
+      commodityType
+    } = phoneData.currentTarget.dataset;
     const {
       encryptedData,
       iv
-    } = res.detail;
+    } = phoneData.detail;
+    if (!encryptedData || !iv) {
+      return;
+    }
     const {
       session_key,
       openid
@@ -182,7 +206,8 @@ Page({
         } = this.data;
         userInfo.phone = res
         that.setData({
-          userInfo
+          userInfo,
+          commodityType
         })
         this.createOrder();
       })
@@ -269,6 +294,7 @@ Page({
               // 支付成功
               if (payState == 1) {
                 that.setData({
+                  isNewCustomer: false,
                   confirmShow: false,
                   systemTipsShow: true,
                   message: "支付成功",
@@ -279,6 +305,7 @@ Page({
               // 支付失败
               if (payState == 2 || payState == 3) {
                 that.setData({
+                  isNewCustomer: false,
                   confirmShow: false,
                   systemTipsShow: true,
                   message: "支付失败",

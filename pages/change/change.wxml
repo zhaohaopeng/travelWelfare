@@ -5,6 +5,9 @@
       {{activityTime}}
     </view>
     <image class="abc-logo" src="../../assets/logo.png"></image>
+    <view class="order-list" bindtap="handleToOrderList">
+      订单列表
+    </view>
   </view>
   <view class="body">
     <view class="card">

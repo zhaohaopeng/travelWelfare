@@ -41,6 +41,20 @@
   top: 24rpx;
 }
 
+.order-list {
+  width: 130rpx;
+  height: 58rpx;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 16px 0px 0px 16px;
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 58rpx;
+  color: #006E71;
+}
+
 .body {
   width: 100%;
   min-height: 100%;

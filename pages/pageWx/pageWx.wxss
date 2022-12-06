@@ -22,7 +22,7 @@
   left: 0;
   background: #fff;
   z-index: 10;
-  background: url("https://m.szduopin.com/image/credit-card-ccq.png") no-repeat center;
+  background: url("https://m.szduopin.com/image/credit-card-wx.png") no-repeat center;
   background-size: 100% 100%;
 }
 
@@ -57,7 +57,7 @@
   top: 0;
   left: 0;
   box-sizing: border-box;
-  padding-top: 1100rpx;
+  padding-top: 940rpx;
   background-color: #B6F3E0;
 }
 
@@ -69,6 +69,7 @@
   border-radius: 20rpx;
   margin-bottom: 40rpx;
   position: relative;
+  z-index: 1000;
 }
 
 .card .title {

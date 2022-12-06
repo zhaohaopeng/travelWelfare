@@ -13,15 +13,9 @@
     "miniprogram": {
       "list": [
         {
-          "name": "",
-          "pathName": "pages/pageBank/pageBank",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "订单列表",
           "pathName": "pages/orderList/orderList",
-          "query": "userId=f74ab985ea561b8224b79bb5e724e6e2&activityId=\"1\"",
+          "query": "userId=f74ab985ea561b8224b79bb5e724e6e2&activityId=1",
           "scene": null
         },
         {
@@ -39,6 +33,24 @@
         {
           "name": "CKD兑换页",
           "pathName": "pages/change/change",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "掌银活动",
+          "pathName": "pages/pageBank/pageBank",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "微信活动",
+          "pathName": "pages/pageWx/pageWx",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "乘车券活动页",
+          "pathName": "pages/pageCcq/pageCcq",
           "query": "",
           "scene": null
         }

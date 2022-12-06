@@ -10,6 +10,7 @@ Page({
    */
   data: {
     activityTime: activityTime,
+    activityId: 2,
     guideShow: false,
     cdkCode: null,
     openid: null,
@@ -26,7 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.handleGetOpenid();
   },
   handleChange() {
     const that = this;
@@ -38,41 +39,34 @@ Page({
       })
       return;
     }
-    const {
-      id
-    } = this.data.userInfo;
     this.setData({
       loading: true
     })
-    if (id) {
-      const params = {
-        cdkCode: this.data.cdkCode,
-        userId: id
-      }
-      $api.changeCdk(params).then(res => {
-        that.setData({
-          systemTipsShow: true,
-          message: "兑换成功",
-          describe: `X张优惠券派发您账户中，您可在【微信APP—我—卡包-券和礼品卡】中查看已成功领取的优惠券`,
-          iconType: "success"
-        })
-        this.setData({
-          loading: false
-        })
-      }).catch(() => {
-        this.setData({
-          loading: false
-        })
-        that.setData({
-          systemTipsShow: true,
-          message: "兑换失败",
-          describe: `您的兑换码已使用`,
-          iconType: "error"
-        })
-      })
-    } else {
-      this.handleGetOpenid();
+    const params = {
+      cdkCode: this.data.cdkCode,
+      userId: this.data.userInfo.id
     }
+    $api.changeCdk(params).then(res => {
+      that.setData({
+        systemTipsShow: true,
+        message: "兑换成功",
+        describe: `X张优惠券派发您账户中，您可在【微信APP—我—卡包-券和礼品卡】中查看已成功领取的优惠券`,
+        iconType: "success"
+      })
+      this.setData({
+        loading: false
+      })
+    }).catch(() => {
+      this.setData({
+        loading: false
+      })
+      that.setData({
+        systemTipsShow: true,
+        message: "兑换失败",
+        describe: `您的兑换码已使用`,
+        iconType: "error"
+      })
+    })
   },
   onClickShow() {
     this.setData({
@@ -116,7 +110,6 @@ Page({
         this.setData({
           userInfo: res
         })
-        that.handleChange();
       } else {
         $api.createAccount({
           weChatOpenId: this.data.openid
@@ -128,7 +121,6 @@ Page({
               phone: null
             }
           })
-          that.handleChange();
         }).catch(() => {
           this.setData({
             loading: false
@@ -141,4 +133,13 @@ Page({
       })
     })
   },
+  /**
+   * 跳转订单列表
+   */
+  handleToOrderList() {
+    const that = this;
+    wx.navigateTo({
+      url: `/pages/orderList/orderList?userId=${that.data.userInfo.id}&activityId=${that.data.activityId}&pageName=cdk`,
+    })
+  }
 })

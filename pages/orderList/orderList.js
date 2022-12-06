@@ -21,12 +21,13 @@ Page({
   onLoad: function (options) {
     const {
       userId,
-      activityId
+      activityId,
+      pageName
     } = options;
-    console.log(activityId, ":activityId");
     this.setData({
       userId,
-      activityId
+      activityId,
+      pageName
     })
     this.queryVoucherStatistics();
     this.queryUserHistoryOrder();
@@ -60,7 +61,11 @@ Page({
    * 查询订单列表
    */
   queryUserHistoryOrder() {
-    $api.queryUserHistoryOrder(this.data.userId).then(res => {
+    const {
+      userId,
+      activityId
+    } = this.data;
+    $api.queryUserHistoryOrder(userId, activityId).then(res => {
       this.setData({
         orderList: res || []
       })

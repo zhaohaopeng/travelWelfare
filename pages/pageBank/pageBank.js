@@ -1,16 +1,15 @@
-// pages/pageBank/pageBank.js
 const {
   activityTime
 } = getApp().globalData;
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     activityTime,
     width: null,
-    height: null
+    height: null,
+    loading: false,
   },
 
   /**
@@ -19,10 +18,40 @@ Page({
   onLoad: function (options) {
 
   },
-  savePoster() {
-    const that = this
+  handleSaveImage() {
+    const that = this;
+    that.setData({
+      loading: true
+    })
+    wx.downloadFile({
+      url: 'https://m.szduopin.com/image/registered-bank.png',
+      success(res) {
+        const {
+          statusCode,
+          tempFilePath
+        } = res;
+        if (statusCode == 200) {
+          that.savePoster(tempFilePath)
+          that.setData({
+            loading: false
+          })
+        } else {
+          that.setData({
+            loading: false
+          })
+          wx.showToast({
+            title: '图片获取失败',
+            icon: 'error',
+            duration: 1500
+          });
+        }
+      }
+    })
+  },
+  savePoster(filePath) {
+    const that = this;
     wx.saveImageToPhotosAlbum({
-      filePath: "https://m.szduopin.com/image/registered-bank.png",
+      filePath,
       success: function () {
         wx.showToast({
           title: '保存成功',

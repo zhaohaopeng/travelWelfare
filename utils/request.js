@@ -23,11 +23,13 @@ function request(method, url, data) {
           if (res.data.code == 0) {
             resolve(res.data.data);
           } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'error',
-              duration: 2000
-            })
+            if (res.data.code != "8001") {
+              wx.showToast({
+                title: res.data.msg,
+                icon: 'error',
+                duration: 2000
+              })
+            }
             reject(res.data.data);
           }
         } else {
