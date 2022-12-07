@@ -22,11 +22,11 @@
         </view>
         <view class="card-text-right">
           <!-- 新客手机号直接授权 -->
-          <van-button wx:if="{{isNewCustomer}}" custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityA.commodityType}}" open-type="getPhoneNumber" bind:getphonenumber="getPhoneNumber">
+          <van-button wx:if="{{isNewCustomer}}" custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityA.commodityType}}" open-type="getPhoneNumber" bind:getphonenumber="getPhoneNumber" disabled='{{!isPay}}'>
             {{commodityA.price * 100}}分钱领取
           </van-button>
           <!-- 老客不需要手机号授权 -->
-          <van-button wx:if="{{!isNewCustomer}}" custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityA.commodityType}}" bind:click="handleCreateOrder">
+          <van-button wx:if="{{!isNewCustomer}}" custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityA.commodityType}}" bind:click="handleCreateOrder" disabled='{{!isPay}}'>
             {{commodityA.price * 100}}分钱领取
           </van-button>
           <view class="text">每人可购买一次</view>
@@ -41,11 +41,11 @@
         </view>
         <view class="card-text-right">
           <!-- 新客手机号直接授权 -->
-          <van-button wx:if="{{isNewCustomer}}" custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityB.commodityType}}" open-type="getPhoneNumber" bind:getphonenumber="getPhoneNumber">
+          <van-button wx:if="{{isNewCustomer}}" custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityB.commodityType}}" open-type="getPhoneNumber" bind:getphonenumber="getPhoneNumber" disabled='{{!isPay}}'>
             {{commodityB.price * 100}}分钱领取
           </van-button>
           <!-- 老客不需要手机号授权 -->
-          <van-button wx:if="{{!isNewCustomer}}" custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityB.commodityType}}" bind:click="handleCreateOrder">
+          <van-button wx:if="{{!isNewCustomer}}" custom-class="button" round type="info" color="#FA701B" data-commodity-type="{{commodityB.commodityType}}" bind:click="handleCreateOrder" disabled='{{!isPay}}'>
             {{commodityB.price * 100}}分钱领取
           </van-button>
           <view class="text">每人每月可购买一次</view>
@@ -58,7 +58,7 @@
           <view class="card-text-content">好礼等你拿</view>
         </view>
         <view class="card-text-right">
-          <van-button custom-class="button" round type="info" color="#FA701B" bind:click="handleToActive">立即办卡</van-button>
+          <van-button custom-class="button" round type="info" color="#FA701B" bind:click="handleToActive" disabled='{{!isPay}}'>立即办卡</van-button>
         </view>
       </view>
       <view class="card-item card-item-4">
@@ -68,7 +68,7 @@
           <view class="card-text-content">注册农行掌银领取</view>
         </view>
         <view class="card-text-right">
-          <van-button custom-class="button" round type="info" color="#FA701B" bind:click="handleToCreate">立即注册</van-button>
+          <van-button custom-class="button" round type="info" color="#FA701B" bind:click="handleToCreate" disabled='{{!isPay}}'>立即注册</van-button>
         </view>
       </view>
     </view>

@@ -31,7 +31,8 @@ Page({
     describe: null,
     iconType: null,
     commodityInfo: {},
-    isNewCustomer: false
+    isNewCustomer: false,
+    isPay: false
   },
 
   /**
@@ -103,7 +104,8 @@ Page({
       const orderList = res || [];
       let isNewCustomer = orderList.length ? false : true;
       this.setData({
-        isNewCustomer
+        isNewCustomer,
+        isPay: true
       })
     })
   },
@@ -275,6 +277,10 @@ Page({
         timeStamp
       } = res;
 
+      that.setData({
+        confirmShow: false,
+      })
+
       wx.requestPayment({
         timeStamp: timeStamp + '',
         nonceStr: nonceStr,
@@ -295,7 +301,6 @@ Page({
               if (payState == 1) {
                 that.setData({
                   isNewCustomer: false,
-                  confirmShow: false,
                   systemTipsShow: true,
                   message: "支付成功",
                   describe: "参与活动成功 您可在订单列表查看发券明细",
@@ -306,7 +311,6 @@ Page({
               if (payState == 2 || payState == 3) {
                 that.setData({
                   isNewCustomer: false,
-                  confirmShow: false,
                   systemTipsShow: true,
                   message: "支付失败",
                   describe: "非农行信用卡支付，金额退回",

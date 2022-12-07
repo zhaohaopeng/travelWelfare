@@ -32,7 +32,8 @@ Page({
     message: null,
     describe: null,
     iconType: null,
-    isNewCustomer: false // 是否是新客户
+    isNewCustomer: false, // 是否是新客户
+    isPay: false,
   },
 
   /**
@@ -99,7 +100,8 @@ Page({
       const orderList = res || [];
       let isNewCustomer = orderList.length ? false : true;
       this.setData({
-        isNewCustomer
+        isNewCustomer,
+        isPay: true
       })
     })
   },
@@ -279,7 +281,9 @@ Page({
         signature,
         timeStamp
       } = res;
-
+      that.setData({
+        confirmShow: false,
+      })
       wx.requestPayment({
         timeStamp: timeStamp + '',
         nonceStr: nonceStr,
