@@ -315,7 +315,17 @@ Page({
               }
             })
           }, 500)
+        },
+        fail(res) {
+          console.log(res);
+          that.setData({
+            confirmShow: false,
+          })
         }
+      })
+    }).catch(() => {
+      that.setData({
+        confirmShow: false,
       })
     })
   },

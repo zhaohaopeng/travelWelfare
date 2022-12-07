@@ -12,7 +12,8 @@ Page({
     info: {
       enable: 0
     },
-    orderList: []
+    orderList: [],
+    pageName: null
   },
 
   /**
@@ -48,28 +49,54 @@ Page({
    * 查询订单状态
    */
   queryVoucherStatistics(cb) {
-    $api.queryVoucherStatistics(this.data.userId).then(res => {
-      this.setData({
-        info: res
+    const {
+      pageName
+    } = this.data;
+    if (pageName && pageName == "cdk") {
+      $api.queryCdkVoucherStatistics(this.data.userId).then(res => {
+        this.setData({
+          info: res
+        })
+        if (cb && typeof cb == "function") {
+          cb();
+        }
       })
-      if (cb && typeof cb == "function") {
-        cb();
-      }
-    })
+    } else {
+      $api.queryVoucherStatistics({
+        userId: this.data.userId,
+        activityId: this.data.activityId
+      }).then(res => {
+        this.setData({
+          info: res
+        })
+        if (cb && typeof cb == "function") {
+          cb();
+        }
+      })
+    }
   },
   /**
    * 查询订单列表
    */
   queryUserHistoryOrder() {
     const {
+      pageName,
       userId,
       activityId
     } = this.data;
-    $api.queryUserHistoryOrder(userId, activityId).then(res => {
-      this.setData({
-        orderList: res || []
+    if (pageName && pageName == "cdk") {
+      $api.queryRecordCdk(userId).then(res => {
+        this.setData({
+          orderList: res || []
+        })
       })
-    })
+    } else {
+      $api.queryUserHistoryOrder(userId, activityId).then(res => {
+        this.setData({
+          orderList: res || []
+        })
+      })
+    }
   },
   /**
    * 暂停派发，继续派发
