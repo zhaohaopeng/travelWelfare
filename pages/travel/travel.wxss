@@ -56,6 +56,14 @@
   top: 40rpx;
 }
 
+.chuxing-logo {
+  width: 240rpx;
+  height: 46rpx;
+  position: absolute;
+  left: 280rpx;
+  top: 40rpx;
+}
+
 .body {
   width: 100%;
   min-height: 100%;
@@ -171,7 +179,7 @@
 
 .card-text-right .text {
   font-size: 20rpx;
-  margin-top: 12rpx;
+  margin-top: 6rpx;
   color: #666666;
   font-weight: 400;
 }

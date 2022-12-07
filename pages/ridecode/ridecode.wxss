@@ -55,6 +55,14 @@
   top: 40rpx;
 }
 
+.ccq-logo {
+  width: 150rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 280rpx;
+  top: 38rpx;
+}
+
 .body {
   width: 100%;
   min-height: 100%;

@@ -8,6 +8,7 @@
       {{activityTime}}
     </view>
     <image class="abc-logo" src="../../assets/logo.png"></image>
+    <image class="chuxing-logo" src="../../assets/chuxing-logo.svg"></image>
   </view>
   <view class="body">
     <view class="card">
@@ -34,6 +35,7 @@
 
           <view class="text">每人可购买一次</view>
           <view class="text">15天有效</view>
+          <view class="text">活动期间新办卡用户</view>
         </view>
       </view>
       <!-- 老客礼 -->
@@ -56,6 +58,7 @@
           </van-button>
 
           <view class="text">每人每月可购买一次</view>
+          <view class="text">农行信用卡持卡用户</view>
         </view>
       </view>
       <view class="card-item card-item-3">

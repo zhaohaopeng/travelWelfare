@@ -5,6 +5,7 @@
     "custom-activity": "/components/custom-activity/custom-activity",
     "custom-guide": "/components/custom-guide/custom-guide",
     "custom-confirm": "/components/custom-confirm/custom-confirm",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-image": "@vant/weapp/image/index"
   }
 }

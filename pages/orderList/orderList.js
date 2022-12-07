@@ -81,11 +81,11 @@ Page({
       info
     } = that.data;
     Dialog.confirm({
-        message: info.enable == 0 ? '确认暂停派发吗？' : '确认继续派发吗？',
+        message: !info.enable ? '确认暂停派发吗？' : '确认继续派发吗？',
       })
       .then(() => {
         const params = {
-          enable: info.enable == 0 ? 1 : 0,
+          enable: !info.enable ? 1 : 0,
           userId
         }
         $api.updateVoucherStatus(params).then(res => {

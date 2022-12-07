@@ -8,6 +8,7 @@
       {{activityTime}}
     </view>
     <image class="abc-logo" src="../../assets/logo.png"></image>
+    <image class="ccq-logo" src="../../assets/ccq-logo.png"></image>
   </view>
   <view class="body">
     <view class="card">

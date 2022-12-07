@@ -10,7 +10,7 @@ const API = {
   decodeUserInfo: (data) => request('POST', `/account/decodeUserInfo`, data),
   queryUserOrder: (data) => request('GET', `/order/queryUserOrder?activityId=${data.activityId}&userId=${data.userId}`),
   queryVoucherStatistics: (data) => request('GET', `/coupon/queryVoucherStatistics?userId=${data}`),
-  updateVoucherStatus: (data) => request('POST', `/coupon/updateVoucherStatus`, data),
+  updateVoucherStatus: (data) => request('POST', `/account/updateVoucherStatus`, data),
   queryUserHistoryOrder: (userId, activityId) => request('GET', `/order/queryUserHistoryOrder?userId=${userId}&activityId=${activityId}`),
   changeCdk: (data) => request('POST', `/cdk/activation`, data),
 
