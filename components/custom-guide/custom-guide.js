@@ -16,9 +16,13 @@ Component({
       this.setData({
         style: "background: url('https://m.szduopin.com/image/guide-2.png') no-repeat top; background-size: 100% 100%;"
       })
-    } else {
+    } else if (this.data.activityType == "2") {
       this.setData({
         style: "background: url('https://m.szduopin.com/image/guide-1.png') no-repeat top; background-size: 100% 100%;"
+      })
+    } else {
+      this.setData({
+        style: "background: url('https://m.szduopin.com/image/guide-3.png') no-repeat top; background-size: 100% 100%;"
       })
     }
   },

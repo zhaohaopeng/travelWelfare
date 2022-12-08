@@ -264,6 +264,25 @@ Page({
   /**
    * @name 确认购买
    */
+  createOrder() {
+    const {
+      commodityType
+    } = this.data;
+    let commodityInfo = null;
+    if (commodityType == 0) {
+      commodityInfo = this.data.commodityA;
+    }
+    if (commodityType == 1) {
+      commodityInfo = this.data.commodityB;
+    }
+    this.setData({
+      commodityInfo,
+      confirmShow: true
+    })
+  },
+  /**
+   * @name 确认购买
+   */
   onMyEvent(data) {
     const {
       id
@@ -281,9 +300,11 @@ Page({
         signature,
         timeStamp
       } = res;
+
       that.setData({
         confirmShow: false,
       })
+
       wx.requestPayment({
         timeStamp: timeStamp + '',
         nonceStr: nonceStr,
@@ -304,7 +325,6 @@ Page({
               if (payState == 1) {
                 that.setData({
                   isNewCustomer: false,
-                  confirmShow: false,
                   systemTipsShow: true,
                   message: "支付成功",
                   describe: "参与活动成功 您可在订单列表查看发券明细",
@@ -315,7 +335,6 @@ Page({
               if (payState == 2 || payState == 3) {
                 that.setData({
                   isNewCustomer: false,
-                  confirmShow: false,
                   systemTipsShow: true,
                   message: "支付失败",
                   describe: "非农行信用卡支付，金额退回",
@@ -325,16 +344,20 @@ Page({
             })
           }, 500)
         },
-        fail(res) {
-          console.log(res);
+        fail() {
           that.setData({
             confirmShow: false,
           })
         }
       })
-    }).catch(() => {
+    }).catch((res) => {
       that.setData({
         confirmShow: false,
+        isNewCustomer: false,
+        systemTipsShow: true,
+        message: "系统提示",
+        describe: res || "系统错误",
+        iconType: "error"
       })
     })
   },

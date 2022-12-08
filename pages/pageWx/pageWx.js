@@ -24,7 +24,7 @@ Page({
       loading: true
     })
     wx.downloadFile({
-      url: 'https://m.szduopin.com/image/registered-bank.png',
+      url: 'https://m.szduopin.com/image/register-credit-card.jpg',
       success(res) {
         const {
           statusCode,

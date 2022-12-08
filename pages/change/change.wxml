@@ -4,7 +4,6 @@
     <view class="activity-time">
       {{activityTime}}
     </view>
-    <image class="abc-logo" src="../../assets/logo.png"></image>
     <view class="order-list" bindtap="handleToOrderList">
       订单列表
     </view>
@@ -25,6 +24,6 @@
       <van-button custom-class="button" plain round type="primary" color="#399841" bind:click="onClickShow">用券指引</van-button>
     </view>
   </view>
-  <custom-guide show="{{guideShow}}" activityType="{{2}}"></custom-guide>
+  <custom-guide show="{{guideShow}}" activityType="{{3}}"></custom-guide>
   <custom-system-tips show="{{systemTipsShow}}" message="{{message}}" describe="{{describe}}" iconType="{{iconType}}"></custom-system-tips>
 </view>

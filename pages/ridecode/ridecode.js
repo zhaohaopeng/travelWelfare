@@ -320,16 +320,20 @@ Page({
             })
           }, 500)
         },
-        fail(res) {
-          console.log(res);
+        fail() {
           that.setData({
             confirmShow: false,
           })
         }
       })
-    }).catch(() => {
+    }).catch((res) => {
       that.setData({
         confirmShow: false,
+        isNewCustomer: false,
+        systemTipsShow: true,
+        message: "系统提示",
+        describe: res || "系统错误",
+        iconType: "error"
       })
     })
   },

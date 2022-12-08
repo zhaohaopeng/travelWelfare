@@ -32,14 +32,14 @@ function request(method, url, data) {
           if (res.data.code == 0) {
             resolve(res.data.data);
           } else {
-            if (res.data.code != "8001") {
+            if (res.data.code != "8001" && res.data.code != "8002") {
               wx.showToast({
                 title: res.data.msg,
                 icon: 'error',
                 duration: 2000
               })
             }
-            reject(res.data.data);
+            reject(res.data.data || res.data.msg);
           }
         } else {
           //其他异常
