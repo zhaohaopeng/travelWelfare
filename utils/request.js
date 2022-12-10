@@ -17,7 +17,7 @@ function request(method, url, data) {
   return new Promise(function (resolve, reject) {
     let header = {
       'content-type': 'application/json',
-      'Authorization': Authorization
+      'activeAuthorization': Authorization
     };
     wx.request({
       url: baseURL + url,

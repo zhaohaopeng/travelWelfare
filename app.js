@@ -1,6 +1,10 @@
 // app.js
 App({
   onLaunch() {
+    wx.loadFontFace({
+      family: "Bitstream Vera Serif Bold",
+      source: 'url("https://m.szduopin.com/font/FZLTXHJT-FZLTXIHJW.TTF")',
+    });
     if (wx.canIUse('getUpdateManager')) {
       const updateManager = wx.getUpdateManager()
       updateManager.onCheckForUpdate(function (res) {
