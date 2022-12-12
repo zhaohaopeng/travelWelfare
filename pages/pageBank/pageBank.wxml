@@ -14,13 +14,10 @@
         <view class="t-1">一、活动主题</view>
         <view class="t-3">在线新注册农行掌银，免费送50张0.99元微信乘</view>
         <view class="t-1 mt-4">二、活动时间</view>
-        <view class="t-3">2022年12月1日(以实际上线日期为准)至2023年3月31日。</view>
-        <view class="t-1 mt-4">三、活动形式及目标</view>
+        <view class="t-3">2022年12月至2023年3月</view>
+        <view class="t-1 mt-4">三、活动形式</view>
         <view class="t-3">
-          活动目标: 通过微信乘车码渠道获客1000户在线新注册农行掌银APP客户。
-        </view>
-        <view class="t-3">
-          通过微信乘车码活动宣传渠道在线注册农行掌银APP且所在地选择广东省 (深圳) 的客户，可登录农行掌银免费领取微信乘车码红包。
+          在线注册农行掌银APP且所在地选择广东省 (深圳) 的客户，可登录农行掌银免费领取微信乘车码红包。
         </view>
         <view class="t-1 mt-4">四、领奖时间及兑奖有效期</view>
         <view class="t-2 mt-3">1.注册礼: 30张0.99元微信乘车码红包</view>
@@ -38,7 +35,7 @@
       </view>
     </view>
     <view class="save-image">
-      <van-button type="primary" block round color="rgba(19, 142, 118, 1)" bind:click="handleSaveImage" loading="{{loading}}" disabled="{{loading}}" loading-text="下载中">点击保存图片参与</van-button>
+      <van-button type="primary" block round color="rgba(19, 142, 118, 1)" bind:click="handleSaveImage" loading="{{loading}}" disabled="{{loading}}" loading-text="下载中">点击保存图片扫码参与</van-button>
     </view>
   </view>
 </view>

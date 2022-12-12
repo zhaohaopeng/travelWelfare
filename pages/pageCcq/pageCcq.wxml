@@ -11,7 +11,7 @@
       <view class="title">活动内容</view>
       <view class="content">
         <view class="t-1">一、活动时间</view>
-        <view class="t-3">2022年12月1日（以实际上线且期为准）至2023年3月31日</view>
+        <view class="t-3">2022年12月至2023年3月</view>
         <view class="t-1 mt-4">二、奖品及兑奖有效期</view>
         <view class="t-2 mt-3">1.120张0.99元微信乘车码红包</view>
         <view class="t-3">120张0.99元乘车券，每周一至周五每天派发2张乘车券 (24小时内有效)，支持手动暂停/恢复派发。</view>
@@ -38,7 +38,7 @@
       </view>
     </view>
     <view class="save-image">
-      <van-button type="primary" block round color="rgba(19, 142, 118, 1)" bind:click="handleSaveImage" loading="{{loading}}" disabled="{{loading}}" loading-text="下载中">点击保存图片参与</van-button>
+      <van-button type="primary" block round color="rgba(19, 142, 118, 1)" bind:click="handleSaveImage" loading="{{loading}}" disabled="{{loading}}" loading-text="下载中">点击保存图片扫码参与</van-button>
     </view>
   </view>
 </view>
