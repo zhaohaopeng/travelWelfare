@@ -57,10 +57,10 @@
 
 .ccq-logo {
   width: 150rpx;
-  height: 50rpx;
+  height: 44rpx;
   position: absolute;
   left: 280rpx;
-  top: 38rpx;
+  top: 40rpx;
 }
 
 .body {
