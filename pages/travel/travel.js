@@ -334,7 +334,6 @@ Page({
               // 支付失败
               if (payState == 2 || payState == 3) {
                 that.setData({
-                  isNewCustomer: false,
                   systemTipsShow: true,
                   message: "支付失败",
                   describe: "非农行信用卡支付，金额退回",
@@ -353,7 +352,6 @@ Page({
     }).catch((res) => {
       that.setData({
         confirmShow: false,
-        isNewCustomer: false,
         systemTipsShow: true,
         message: "系统提示",
         describe: res || "系统错误",
