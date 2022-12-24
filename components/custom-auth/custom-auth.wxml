@@ -1,0 +1,28 @@
+<van-overlay show="{{ show }}" bind:click="onClickHide" z-index="2">
+  <view class="wrapper">
+    <view class="wrapper-block" catch:tap="noop">
+      <view class="title">
+        {{title}}
+        <view class="close" bindtap="onClickHide">
+          <image src="../../assets/icon-close.png"></image>
+        </view>
+      </view>
+      <view class="icon" wx:if="{{iconType}}">
+        <image wx:if="{{iconType == 'success'}}" src="../../assets/icon-success.png"></image>
+        <image wx:if="{{iconType == 'error'}}" src="../../assets/icon-error.png"></image>
+      </view>
+      <view class="content">
+        <view class="message">{{message}}</view>
+        <view class="describe">{{describe}}</view>
+      </view>
+      <view class="button" wx:if="{{commodityType == 0}}">
+        <van-button custom-class="active-button" round plain type="info" color="rgba(19, 142, 118, 1)" bind:click="handleToPath">立即办卡</van-button>
+        <van-button custom-class="active-button" round type="info" color="rgba(19, 142, 118, 1)" open-type="getPhoneNumber" bind:getphonenumber="getPhoneNumber">确认</van-button>
+      </view>
+      <view class="button" wx:if="{{commodityType == 1}}">
+        <van-button custom-class="active-button" round plain type="info" color="rgba(19, 142, 118, 1)" bind:click="onClickHide">关闭</van-button>
+        <van-button custom-class="active-button" round type="info" color="rgba(19, 142, 118, 1)" open-type="getPhoneNumber" bind:getphonenumber="getPhoneNumber">确认</van-button>
+      </view>
+    </view>
+  </view>
+</van-overlay>

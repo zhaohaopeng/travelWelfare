@@ -2,6 +2,7 @@
   "navigationBarTitleText": "出行券",
   "usingComponents": {
     "custom-system-tips": "/components/custom-system-tips/custom-system-tips",
+    "custom-auth": "/components/custom-auth/custom-auth",
     "custom-activity": "/components/custom-activity/custom-activity",
     "custom-guide": "/components/custom-guide/custom-guide",
     "custom-confirm": "/components/custom-confirm/custom-confirm",

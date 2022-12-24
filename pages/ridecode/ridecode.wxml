@@ -78,11 +78,11 @@
       <van-button custom-class="button" plain round type="primary" color="#399841" bind:click="onClickShow" data-type="guideShow">用券指引</van-button>
     </view>
   </view>
-
   <custom-guide show="{{guideShow}}" activityType="{{activityId}}"></custom-guide>
   <custom-system-tips show="{{systemTipsShow}}" message="{{message}}" describe="{{describe}}" iconType="{{iconType}}"></custom-system-tips>
   <custom-activity show="{{activityShow}}" activityType="{{activityId}}"></custom-activity>
   <custom-confirm show="{{confirmShow}}" commodit="{{commodityInfo}}" bindmyevent="onMyEvent"></custom-confirm>
   <van-dialog title="系统提示" show="{{ show }}" show-cancel-button confirm-button-open-type="getPhoneNumber" bind:close="onClose" bind:getphonenumber="getPhoneNumber" message="授权手机号" confirm-button-text="授权" confirm-button-color="#006E71">
   </van-dialog>
+  <custom-auth show="{{systemAuthShow}}" describe="{{authDescribe}}" commodityType="{{commodityType}}" activityId="{{activityId}}" bindmyevent="onCustomAuth"></custom-auth>
 </view>

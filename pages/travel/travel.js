@@ -34,6 +34,9 @@ Page({
     iconType: null,
     isNewCustomer: false, // 是否是新客户
     isPay: false,
+    systemAuthShow: false,
+    authMessage: null,
+    authDescribe: null,
   },
 
   /**
@@ -352,11 +355,20 @@ Page({
     }).catch((res) => {
       that.setData({
         confirmShow: false,
-        systemTipsShow: true,
-        message: "系统提示",
-        describe: res || "系统错误",
-        iconType: "error"
+        systemAuthShow: true,
+        authDescribe: res || "系统错误",
       })
     })
   },
+  // 授权后在支付
+  onCustomAuth(e) {
+    const {
+      phoneData
+    } = e.detail;
+    const {
+      commodityType
+    } = this.data;
+    phoneData.currentTarget.dataset.commodityType = commodityType;
+    this.getPhoneNumber(phoneData);
+  }
 })

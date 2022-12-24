@@ -32,7 +32,10 @@ Page({
     iconType: null,
     commodityInfo: {},
     isNewCustomer: false,
-    isPay: false
+    isPay: false,
+    systemAuthShow: false,
+    authMessage: null,
+    authDescribe: null,
   },
 
   /**
@@ -173,7 +176,6 @@ Page({
       }
     })
   },
-
   /**
    * 手机号授权
    */
@@ -328,10 +330,8 @@ Page({
     }).catch((res) => {
       that.setData({
         confirmShow: false,
-        systemTipsShow: true,
-        message: "系统提示",
-        describe: res || "系统错误",
-        iconType: "error"
+        systemAuthShow: true,
+        authDescribe: res || "系统错误",
       })
     })
   },
@@ -346,4 +346,15 @@ Page({
       [type]: true,
     })
   },
+  // 授权后在支付
+  onCustomAuth(e) {
+    const {
+      phoneData
+    } = e.detail;
+    const {
+      commodityType
+    } = this.data;
+    phoneData.currentTarget.dataset.commodityType = commodityType;
+    this.getPhoneNumber(phoneData);
+  }
 })
