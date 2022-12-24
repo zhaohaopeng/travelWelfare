@@ -38,6 +38,6 @@ App({
   globalData: {
     userInfo: null,
     appId: "wxe6c4a28a8d5d2540",
-    activityTime: "活动时间：2022年12月 - 2023年3月"
+    activityTime: "活动时间：2022年12月 - 2023年6月"
   }
 })
